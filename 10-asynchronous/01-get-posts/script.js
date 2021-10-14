@@ -10,11 +10,8 @@
 // You will have time to focus on it later.
 
 const myCallback = (error, posts) => {
-    if (!error) {
-        console.log(posts);
-    } else {
-        console.log(error);
-    }
+    if (!error) console.log(posts);
+    else console.log(error);
 }
 
 (() => {
