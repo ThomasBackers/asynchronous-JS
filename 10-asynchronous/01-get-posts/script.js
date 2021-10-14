@@ -12,7 +12,7 @@
 const myCallback = (error, posts) => {
     if (!error) console.log(posts);
     else console.log(error);
-}
+};
 
 (() => {
 
