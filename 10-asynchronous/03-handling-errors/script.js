@@ -9,6 +9,13 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
+const getPersonsCallback = (error, arrayOfPeople) => {
+    if (!error) console.log(arrayOfPeople);
+    else console.log(error);
+};
+
 (() => {
-    // your code here
+    document.querySelector("#run").addEventListener("click", () => {
+        window.lib.getPersons(getPersonsCallback);
+    });
 })();

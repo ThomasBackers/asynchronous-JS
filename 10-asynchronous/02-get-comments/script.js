@@ -26,9 +26,7 @@ const getPostsCallback = (error, posts) => {
 };
 
 (() => {
-    // 1. on click on the button
     document.querySelector("#run").addEventListener("click", () => {
-        // 2. call the getPosts function
         window.lib.getPosts(
             getPostsCallback
         );
