@@ -9,12 +9,20 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
+const myCallback = (error, posts) => {
+    if (!error) {
+        console.log(posts);
+    } else {
+        console.log(error);
+    }
+}
+
 (() => {
 
     document.querySelector("#run").addEventListener("click", () => {
 
         window.lib.getPosts( 
-            // Your code here
+            myCallback
             
         );
         
