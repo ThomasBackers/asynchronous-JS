@@ -11,12 +11,6 @@
 
 (() => {
     document.querySelector("#run").addEventListener("click", () => {
-        window.lib.getPosts().then(
-            posts => {
-                for (let post of posts) {
-                    console.log(post.id);
-                }
-            }
-        )
+        
     });
 })();
