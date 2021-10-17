@@ -11,6 +11,20 @@
 
 (() => {
     document.querySelector("#run").addEventListener("click", () => {
-        
+        window.lib.getPosts().then(
+            posts => {
+                posts.forEach(post => {
+                    window.lib.getComments().then(post.id).then(
+                        comments => {
+                            post.comments = [];
+                            comments.forEach(
+                                comment => post.comments.push(comment)
+                            );
+                        }
+                    );
+                    console.log(post);
+                })
+            }
+        );
     });
 })();
