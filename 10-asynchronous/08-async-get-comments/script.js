@@ -9,6 +9,18 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
+const asyncGetComments = async(postId) => {
+    return await window.lib.getComments(postId);
+};
+
+const asyncGetPosts = async() => {
+    return await window.lib.getPosts();
+};
+
 (() => {
-    // your code here
+    document.querySelector("#run").addEventListener("click", () => {
+        const posts = asyncGetPosts();
+        for (let post of posts) post.comments = asyncGetComments(post.id);
+        console.log(posts);
+    });
 })();
