@@ -9,13 +9,8 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-const asyncGetPosts = async() => {
-    const result = await window.lib.getPosts();
-    console.log(result);
-};
-
 (() => {
     document.querySelector("#run").addEventListener("click", () => {
-        asyncGetPosts();
+        ;
     });
 })();
