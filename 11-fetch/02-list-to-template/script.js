@@ -16,7 +16,6 @@
 
     document.querySelector("#run").addEventListener("click", async() => {
         const response = await (await fetch("http://localhost:3000/heroes")).json();
-        console.log(response);
         response.forEach(hero => {
             const currentLi = document.importNode(tpl.content, true);
             currentLi.querySelector(".name").textContent = `${hero.name}`;
