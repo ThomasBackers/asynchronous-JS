@@ -14,10 +14,18 @@
     const tpl = document.querySelector("#tpl-hero");
     const target = document.querySelector("#target");
 
-    document.querySelector("#run").addEventListener("click", async () => {
-        const response = await fetch("http://localhost:3000/heroes");
-
-        // your code here
-        
+    document.querySelector("#run").addEventListener("click", async() => {
+        const response = await (await fetch("http://localhost:3000/heroes")).json();
+        console.log(response);
+        response.forEach(hero => {
+            const currentLi = document.importNode(tpl.content, true);
+            currentLi.querySelector(".name").textContent = `${hero.name}`;
+            currentLi.querySelector(".alter-ego").textContent = `${hero.alterEgo}`;
+            for (let i = 0; i < hero.abilities.length; i++) {
+                if (i !== hero.abilities.length - 1) currentLi.querySelector(".powers").textContent += `${hero.abilities[i]}, `;
+                else currentLi.querySelector(".powers").textContent += `${hero.abilities[i]}.`;
+            }
+            target.appendChild(currentLi);
+        });
     });
 })();
