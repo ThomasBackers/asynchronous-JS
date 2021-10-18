@@ -10,9 +10,9 @@
 // You will have time to focus on it later.
 
 (() => {
-    document.querySelector("#run").addEventListener("click", async () => {
+    document.querySelector("#run").addEventListener("click", async() => {
         const posts = await window.lib.getPosts();
-        posts.forEach( async (post) => {
+        posts.forEach(async(post) => {
             post.comments = await window.lib.getComments(post.id);
             console.log(post);
         });
