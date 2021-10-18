@@ -10,7 +10,9 @@
 // You will have time to focus on it later.
 
 (() => {
-    document.querySelector("#run").addEventListener("click", async() => {
-        await window.lib.getPosts();
+    document.querySelector("#run").addEventListener("click", async () => {
+        console.log(
+            await window.lib.getPosts()
+        );
     });
 })();
