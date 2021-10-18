@@ -11,7 +11,8 @@
 
 (() => {
     document.querySelector("#run").addEventListener("click", async () => {
-        const response = await fetch("http://localhost:3000/heroes");
+        const response = await fetch("http://localhost:8000/heroes");
+        console.log(await response.json());
 
         // Steps :
         // 1. read the Fetch documentation
