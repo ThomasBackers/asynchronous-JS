@@ -16,3 +16,9 @@ const callback = (error, posts) => console.log(posts);
         window.lib.getPosts(callback);
     });
 })();
+
+/*
+window.lib.getPosts(
+    (error, posts) => console.log(posts)
+);
+*/
