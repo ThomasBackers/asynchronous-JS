@@ -16,17 +16,17 @@
         const powers = document.querySelector("#hero-powers").value.split(", ");
         if (name !== "" && alterEgo !== "" && powers !== "") {
             const result = await fetch("http://localhost:3000/heroes", {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name: name,
-                alterEgo: alterEgo,
-                abilities: powers
-            })
-        });
-        console.log(await result.json());
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: name,
+                    alterEgo: alterEgo,
+                    abilities: powers
+                })
+            });
+            console.log(await result.json());
         }
     });
 })();
