@@ -11,17 +11,22 @@
 
 (() => {
     document.querySelector("#run").addEventListener("click", async() => {
-        const response = await (await fetch("http://localhost:3000/heroes")).json();
         const name = document.querySelector("#hero-name").value;
         const alterEgo = document.querySelector("#hero-alter-ego").value;
         const powers = document.querySelector("#hero-powers").value.split(", ");
-        
-        response.push({
-            id: response.length + 1,
-            name: name,
-            alterEgo: alterEgo,
-            abilities: powers
+        if (name !== "" && alterEgo !== "" && powers !== "") {
+            const result = await fetch("http://localhost:3000/heroes", {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: name,
+                alterEgo: alterEgo,
+                abilities: powers
+            })
         });
-        console.log(response);
+        console.log(await result.json());
+        }
     });
 })();
